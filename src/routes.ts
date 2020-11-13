@@ -3,7 +3,7 @@ import { createUserController } from './useCases/CreateUser'
 
 const router = Router()
 
-router.get('/', async (req, res) => {
+router.post('/users', async (req, res) => {
   return (await createUserController).handler(req, res)
 })
 

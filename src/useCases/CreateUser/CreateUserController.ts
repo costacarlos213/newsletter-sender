@@ -7,11 +7,7 @@ export class CreateUserController {
   constructor(private createUserUseCase: CreateUserUseCase) {}
 
   async handler(req: Request, res: Response): Promise<Response> {
-    const data = {
-      name: 'Carlos',
-      surname: 'Costa',
-      email: 'carloscosta2@gmail.com'
-    }
+    const data = req.body
 
     try {
       await this.createUserUseCase.execute(data)
